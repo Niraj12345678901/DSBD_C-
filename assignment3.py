@@ -32,6 +32,20 @@ print(csv_file.dtypes)
 print()
 
 # Q7: Identify variables with incorrect data types (e.g., numerical values stored as strings). Write a Python script to convert these variables into the correct format.
+print(csv_file.dtypes)
+print(csv_file.head())  # Preview first few rows
+
+# Convert numerical columns to int/float
+csv_file["Margin"] = pd.to_numeric(csv_file["Margin"], errors='coerce')
+csv_file["BR"] = pd.to_numeric(csv_file["BR"], errors='coerce')
+csv_file["Match_ID"] = pd.to_numeric(csv_file["Match_ID"], errors='coerce')
+csv_file["Country_ID"] = pd.to_numeric(csv_file["Country_ID"], errors='coerce')
+
+# Convert 'Start Date' to datetime
+csv_file["Start Date"] = pd.to_datetime(csv_file["Start Date"], errors='coerce')
+
+# Verify changes
+print(csv_file.dtypes)
 
 
 
