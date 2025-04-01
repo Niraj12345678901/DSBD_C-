@@ -1,0 +1,111 @@
+import matplotlib.pyplot as plt
+import numpy as np  
+
+
+y = np.arange(0, 10)
+x = y ** 2 
+
+plt.scatter(x, y, c='g')
+plt.xlabel('X axis')
+plt.ylabel('Y axis')
+plt.title("Scatter plot")
+plt.savefig('scatterplot.png')
+
+plt.plot(x,y,'r*',linestyle='dashed')
+plt.savefig('scatterplot1.png')
+
+plt.subplot(2,2,1)
+plt.plot(x,y,'r--')
+plt.savefig('scatterplot2.png')
+
+plt.subplot(2,2,3)
+plt.plot(x,y,'bo')
+plt.savefig('scatterplot3.png')
+
+plt.subplot(2,2,4)
+plt.plot(x,y,'go')
+plt.savefig('scatterplot4.png')
+
+
+x = np.arange(1,11)
+y = (3 * x) + 5
+
+plt.scatter(x,y,c='g')
+plt.xlabel('X axis')
+plt.ylabel('Y axis')
+plt.title("Scatter plot")
+plt.savefig('scatterplot5.png')
+
+
+
+x = np.arange(0,4 * np.pi, 0.1)
+y = np.sin(x)
+
+plt.plot(x,y)
+plt.savefig('plot.png')
+
+
+
+x = np.arange(0,4)
+y_sin = np.sin(x)
+y_cos = np.cos(x)
+
+plt.subplot(2,2,1)
+plt.title('Sin plot')
+plt.plot(x,y_sin,'r')
+
+plt.subplot(2,2,2)
+plt.title('Cos plot')
+plt.plot(x,y_cos,'r')
+
+plt.savefig('sin_cos_plot.png')
+
+
+x = [2,8,10]
+y = [11,16,9]
+
+x2 = [3,9,11]
+y2 = [4,15,17]
+
+plt.bar(x,y)
+plt.title("Bar plot")
+plt.bar(x2,y2,color='g')
+plt.savefig('Bar plot.png')
+
+
+
+
+
+x = np.array([22,11,47,52,12,60,8,27,42])
+
+plt.hist(x)
+plt.title('Histogram')
+plt.savefig('histogram.png')
+
+
+
+
+
+data = [np.random.normal(0,std,100) for std in range(1,4)]
+
+plt.boxplot(data,vert=True,patch_artist='jobs')
+plt.title('Box plot')
+plt.savefig("boxplot.png")
+
+
+
+
+lables = ['python','c++','ruby','java']
+size = [215,130,245,210]
+colors = ['gold','yellow','green','blue']
+explode = (0.4,0,0,0)
+plt.pie(size,explode=explode,labels=lables,colors=colors)
+plt.title("Pie chart")
+plt.savefig('Pie chart.png')
+
+
+
+
+
+
+
